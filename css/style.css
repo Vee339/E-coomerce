@@ -1,0 +1,312 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*border:1px solid red;*/
+}
+html{
+    font-size:62.5%;
+    /* 1rem = 16px = 100%
+       So, 10px = 62.5%*/
+}
+body{
+    background: #fae1dd;
+}
+
+
+section #header{
+    width:100%;
+    height:150px;
+    background: #ee88aa;
+   /* box-shadow:0 3px 15px hsla(0deg,100%,0%,0.2)*/
+    display:flex;
+    padding-left:80px;
+}
+
+section #header #logo{
+    width:300px;
+    height:100%;
+}
+section #header #logo img{
+    width:200px;
+    height:130px;
+    object-fit:cover;
+    
+}
+section #header i{
+    color:#fff;
+    transition:0.5s;
+    font-size:2.2rem;
+    width:30px;
+    height:30px;
+}
+section #header i:hover{
+    color:rgb(112, 26, 26);
+}
+#header #search{
+    width:500px;
+    height:100%;
+    margin-left:400px;
+    padding:40px 40px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-end;
+} 
+#header #search input#searchproduct{
+    width:0;
+    height:35px;
+    margin-right:10px;
+    background:transparent;
+    border:none;
+    outline:none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.582);   
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+#header #search input#searchproduct.active{
+    width:380px;
+}
+#header #calltoaction{
+    height:100%;
+    width:150px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-end;
+    padding:40px 5px;
+}
+#header #calltoaction :is(#profile, #wishlist, #cart){
+    margin:0 5px;
+    cursor:pointer;
+}
+#categories{
+    width:100%;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /*border-bottom:1px solid #ee88aa;*/
+}
+#categories #list ul{
+    width:100%;
+}
+#categories #list ul li{
+    list-style-type:none;
+    display:inline-block;
+    margin:0 30px 0 30px;
+    padding:0;
+}
+#categories #list ul li a{
+    padding:5px 20px;
+    display:block;
+    text-decoration:none;
+    color:#f098b6;
+    font-size:1.6rem;
+    text-transform:uppercase;
+    transition:0.2;
+}
+#categories #list ul li a:hover{
+    color:#e05e89;
+}
+#search .searchbtn{
+    cursor:pointer;
+}
+
+section :is(.previous,.next){
+    display: inline-block;
+    position: absolute;
+    top: 55%;
+    cursor: pointer;
+    z-index:1000;
+    width:60px;
+    height:60px;
+    border-left:10px solid #d8e2dc;
+    border-bottom:10px solid #d8e2dc;
+    border-radius:5px;
+    transition:0.2s;
+}
+section .previous{
+    left: 5%;
+    
+    transform:rotate(45deg);
+    
+}
+section .next{
+    right: 5%;
+    transform:rotate(-135deg);
+}
+
+section :is(.previous,.next):hover{
+    border-left:10px solid #4d55509a;
+    border-bottom:10px solid #4d55509a;
+    transition:0.2s;
+}
+section .containers{
+    width:100%;
+    height:520px;
+}
+section .container{
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;
+    height:520px;
+    display:flex;
+    flex-wrap:wrap;
+    user-select:none;
+}
+section .container.first{
+    z-index: 5;
+}
+section .container.second{
+    z-index: 4;
+}
+section .container.third{
+    z-index: 3;
+}
+section .container.fourth{
+    z-index: 2;
+}
+section .container.fifth{
+    z-index: 1;
+}
+
+section .container .imgBox{
+    width:50%;
+    height:50%;
+    position:relative;
+    overflow:hidden;
+    user-select:none;
+}
+section .container .imgBox img{
+    position:absolute;
+    width:200%;
+    height:200%;
+    object-fit:cover;
+    user-select:none;
+}
+section .container .imgBox.first img{
+   top:0;
+   left:0;
+}
+section .container .imgBox.second img{
+    top:0;
+    right:0;
+ }
+ section .container .imgBox.third img{
+    bottom:0;
+    left:0;
+   display:block;
+ }
+ section .container .imgBox.fourth img{
+    right:0;
+    bottom:0;
+ }
+.trending{
+    width:100%;
+    height:800px;
+    background:#ffffff;
+    padding:80px;
+}
+.latest{
+    width:100%;
+    height:800px;
+    padding:80px;
+    background:#d8e2dc;
+}
+:is(.trending,.latest) h1{
+    padding:7px 0px;
+    margin-bottom:30px;
+    text-align:center;
+    height:50px;
+    font-size:3.5rem;
+    font-family: 'Dancing Script', cursive;
+    color:#cfbaf0;
+}
+.latest h1{
+    color:#282d32;
+}
+:is(.trending,.latest) .products{
+    width:100%;
+    height:80%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+}
+:is(.trending,.latest) .product{
+    width:22%;
+    height:400px;
+}
+:is(.trending,.latest) .product .imgBox{
+    width:100%;
+    height:85%;
+    overflow:hidden;
+    position:relative;
+}
+:is(.trending,.latest) .product .imgBox img{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:all 0.5s;
+}
+:is(.trending,.latest) .product .imgBox:hover{
+    cursor:pointer;
+}
+:is(.trending,.latest) .product .imgBox:hover img{
+    width:120%;
+    height:120%;
+}
+:is(.trending,.latest) .product .desc{
+    width:100%;
+    height:15%;
+}
+:is(.trending,.latest) .product .desc span{
+    display:block;
+    width:100%;
+    height:50%;
+    padding:8px;
+    font-size:1.7rem;
+    text-align:center;
+    color:#e05e89;
+    font-family: poppins;
+    font-weight:light;
+}
+.latest .product .desc span{
+    color:#282d32;
+}
+:is(.trending,.latest) .pagination{
+    height:20px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+:is(.trending,.latest) .pagination .page{
+    width:15px;
+    height:15px;
+    background:#ffb5a7;
+    border-radius:50%;
+    margin:0 10px;
+    cursor:pointer;
+    transition:all 0.2s;
+}
+.latest .pagination .page{
+    background:#282d32;
+}
+:is(.trending,.latest) .pagination .page:hover{
+    border:2px solid #ffb5a7;
+    background:transparent;
+}
+.latest .pagination .page:hover{
+    border:2px solid #282d32;
+    background:transparent;
+}
+
